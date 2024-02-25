@@ -19,7 +19,7 @@ pipeline {
         stage('Start Application') {
             steps {
                 // Start the Spring Boot application
-                sh "nohup mvn spring-boot:run"
+                sh "nohup mvn spring-boot:run > app.log 2>&1 &"
                 // Optional: Wait for the application to start
 
                 echo "Application started successfully!"
