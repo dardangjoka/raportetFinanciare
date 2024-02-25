@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Define your Maven and Java environment variables
-        JAVA_HOME = '${JAVA_HOME}'
-        MAVEN_HOME = '${M2_HOME}'
+        JAVA_HOME = "${JAVA_HOME}"
+        MAVEN_HOME = "${M2_HOME}"
     }
 
     stages {
