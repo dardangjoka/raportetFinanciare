@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         // Define your Maven and Java environment variables
-        JAVA_HOME = "${env.JAVA_HOME}"
-        MAVEN_HOME = "${env.M2_HOME}"
+        JAVA_HOME = "${JAVA_HOME}"
+        MAVEN_HOME = "${M2_HOME}"
     }
 
     stages {
@@ -12,14 +12,14 @@ pipeline {
         stage('Build') {
             steps {
                 // Maven clean and install
-                sh "${env.M2_HOME}/bin/mvn clean install"
+                sh "${M2_HOME}/bin/mvn clean install"
             }
         }
 
         stage('Start Application') {
             steps {
                 // Start the Spring Boot application
-                sh "nohup ${env.M2_HOME}/bin/mvn spring-boot:run > app.log 2>&1 &"
+                sh "nohup ${M2_HOME}/bin/mvn spring-boot:run > app.log 2>&1 &"
                 // Optional: Wait for the application to start
                 script {
                     def appUrl = 'http://localhost:8081'
@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             // Cleanup steps, stop the application or any other cleanup tasks
-            sh "${env.M2_HOME}/bin/mvn spring-boot:stop"
+            sh "${M2_HOME}/bin/mvn spring-boot:stop"
         }
         success {
             echo "Build and deployment successful!"
