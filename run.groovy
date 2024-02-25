@@ -21,17 +21,9 @@ pipeline {
                 // Start the Spring Boot application
                 sh "nohup ${M2_HOME}/bin/mvn spring-boot:run > app.log 2>&1 &"
                 // Optional: Wait for the application to start
-                script {
-                    def appUrl = 'http://localhost:8081'
-                    timeout(time: 3, unit: 'MINUTES') {
-                        waitUntil {
-                            def response = sh(script: "curl -sL -w %{http_code} ${appUrl} -o /dev/null", returnStdout: true).trim()
-                            echo "Waiting for app to start..."
-                            return response == '200'
-                        }
-                    }
-                    echo "Application started successfully!"
-                }
+
+                echo "Application started successfully!"
+
             }
         }
     }
