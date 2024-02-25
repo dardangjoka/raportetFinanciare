@@ -4,7 +4,7 @@ pipeline {
     environment {
         // Define your Maven and Java environment variables
         JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-        MAVEN_HOME = "/usr/share/maven"
+        M2_HOME = "/usr/share/maven"
     }
 
     stages {
