@@ -29,10 +29,6 @@ pipeline {
     }
 
     post {
-        always {
-            // Cleanup steps, stop the application or any other cleanup tasks
-            sh "${M2_HOME}/bin/mvn spring-boot:stop"
-        }
         success {
             echo "Build and deployment successful!"
         }
