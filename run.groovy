@@ -8,12 +8,6 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                // Checkout the code from Git
-                git 'https://github.com/dardangjoka/raportetFinanciare.git'
-            }
-        }
 
         stage('Build') {
             steps {
