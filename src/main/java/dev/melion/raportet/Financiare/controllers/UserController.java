@@ -1,17 +1,13 @@
 package dev.melion.raportet.Financiare.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import dev.melion.raportet.Financiare.model.User;
+import dev.melion.raportet.Financiare.model.forms.User;
 import dev.melion.raportet.Financiare.services.UserService;
-import org.bson.json.JsonObject;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.DataInput;
-import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;

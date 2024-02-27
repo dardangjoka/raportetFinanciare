@@ -1,4 +1,4 @@
-package dev.melion.raportet.Financiare.model;
+package dev.melion.raportet.Financiare.model.forms;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

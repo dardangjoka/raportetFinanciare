@@ -1,4 +1,4 @@
-package dev.melion.raportet.Financiare.model;
+package dev.melion.raportet.Financiare.model.forms;
 
 import com.mongodb.lang.Nullable;
 import lombok.AllArgsConstructor;
